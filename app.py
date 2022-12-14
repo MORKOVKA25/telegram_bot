@@ -1,9 +1,11 @@
 import telebot, random
 from telebot import custom_filters
 import config										#config.py здесь хранятся все глобальные переменные
+if config.TOKEN == "put your token here": 
+	print("put your token in config.py file")
+	exit()
 bot = telebot.TeleBot(config.TOKEN)
 #print("started")
-
 @bot.message_handler(commands=['enable'])			#флаг для временного отключения бота, работает на глобальных переменных указанных в config.py, 
 def enable(message):								#да глобальные перемнные это плохо, но мне так проще да и ***** впринципе 
 	config.FLAG = True
